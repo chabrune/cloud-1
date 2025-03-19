@@ -1,0 +1,17 @@
+---
+- name: Setup
+  hosts: all
+  remote_user: chabrune
+  become: true
+  tasks:
+    - name: Install dependencies
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg-agent
+          - software-properties-common
+          - make
+          - python3
+        state: present
